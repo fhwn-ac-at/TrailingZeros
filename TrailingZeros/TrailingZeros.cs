@@ -6,11 +6,11 @@ namespace TrailingZeros
     {
         public static int TrailingZeroCount(this BigInteger value)
         {
-            if (value == 0)
+            if (value.IsZero)
                 return 0;
 
             var count = 0;
-            for (; value % 10 == 0; value /= 10, ++count) ;
+            for (; (value % 10).IsZero; value /= 10, ++count) ;
 
             return count;
         }
