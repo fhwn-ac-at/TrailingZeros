@@ -10,7 +10,7 @@ namespace TrailingZeros
         return 0;
 
       var count = 0;
-      for (; (value % 10).IsZero; value /= 10, ++count) ;
+      for (; (value & BigInteger.One).IsZero; value >>= 1, ++count) ;
 
       return count;
     }
